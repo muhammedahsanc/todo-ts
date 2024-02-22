@@ -1,19 +1,21 @@
-import { MainProps } from '../interfaces'
+import { MainProps, getProps } from '../interfaces'
 import Items from './Items'
 
 function List({
+    getDatas,
     formData,
     setFormData,
     EditId,
     setFormDatas,
     setEditId,
     formDatas,
-}:MainProps) {
+}:MainProps & getProps) {
   return (
     <div>
         {formDatas.map((item)=>{
             return(
                 <Items 
+                getDatas={getDatas}
                 obj={item}
                 setEditId={setEditId}
                 setFormData={setFormData}

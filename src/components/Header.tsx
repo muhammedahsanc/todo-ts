@@ -1,14 +1,28 @@
+import styled from "styled-components";
 
-function Header() {
+function Header({count}:{count:number}) {
   return (
-    <div>
-      {" "}
-      <div className="">
+<HeaderWrapper>
+      <InnerDiv>
         <br />
-        <h2>Hey...it's Sunday 🌝😜 </h2>
-      </div>
-    </div>
+        <Heading>Hey...Today you have  {count} activities  🌝😜</Heading>
+      </InnerDiv>
+    </HeaderWrapper>
   );
 }
+const HeaderWrapper = styled.div`
+  width:fixed;
+  padding: 20px;
+  // background-color: #f0f0f0;
+`;
+
+const InnerDiv = styled.div`
+  text-align: center;
+`;
+
+const Heading = styled.h2`
+  font-size: 24px;
+  color: #333;
+`;
 
 export default Header;
